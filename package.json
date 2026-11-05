@@ -1,13 +1,23 @@
 {
   "name": "contactlist",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "MERN Contact List Application deployed on Microsoft Azure",
+  "main": "Server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"npx nodemon Server\" \"cd client && npm start\""
+    "start": "node Server.js",
+    "server": "nodemon Server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"nodemon Server.js\" \"npm start --prefix client\"",
+    "build": "cd client && npm install --legacy-peer-deps && npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "mern",
+    "azure",
+    "mongodb",
+    "express",
+    "react",
+    "node"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
@@ -16,7 +26,11 @@
   },
   "dependencies": {
     "concurrently": "^10.0.5",
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "mongoose": "^9.10.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
